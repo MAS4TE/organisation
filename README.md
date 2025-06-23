@@ -10,4 +10,4 @@ This repository contains concepts and diagrams of the MAS4TE project.
 
 ## Sequence Diagram
 
-[See here](./sequence_diagram.md)
+[See here](./storage_market_seq_diagram.md)
