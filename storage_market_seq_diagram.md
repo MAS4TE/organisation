@@ -1,13 +1,13 @@
 ```mermaid
 sequenceDiagram
-    participant ProviderAgent as Provider Agent
-    participant ConsumerAgent as Consumer Agent
+    participant FZJ as FZJ FiWare
+    participant OptFramework as Optimization Framework
     participant LLM_Provider as LLM (Provider Side)
     participant LLM_Consumer as LLM (Consumer Side)
-    participant OptFramework as Optimization Framework
-    participant Market as Battery Market
+    participant ProviderAgent as Provider Agent
+    participant ConsumerAgent as Consumer Agent
+    participant Market as Battery Market + Bilancing Coordinator
     participant Blockchain
-    participant FZJ as FZJ FiWare
 
     LLM_Provider->>OptFramework: Query price suggestion (supply side)
     OptFramework-->>LLM_Provider: Return price suggestion
@@ -28,10 +28,9 @@ sequenceDiagram
     Market-->>ProviderAgent: Return clearing result
     Market-->>ConsumerAgent: Return clearing result
 
-    ConsumerAgent->>ProviderAgent: Coordinate schedule / storage usage
+    ConsumerAgent->>Market: Schedule of awarded battery
+    Market->>ProviderAgent: Schedule of sold battery
 
     ProviderAgent->>FZJ: Send operational data
     FZJ-->>FZJ: Process via FIWARE
-    
-    linkStyle 3 stroke:#ff3,stroke-width:4px,color:red;
 ```
