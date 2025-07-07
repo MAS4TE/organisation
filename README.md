@@ -17,8 +17,10 @@ This repository contains concepts and diagrams of the MAS4TE project.
 [See here](./storage_market_seq_diagram.md)
 
 
-## Project phases
+## Product definitions
+[See here](./virtual_products.md)
 
+## Project phases
 
 ![MAS4TE](./media/mas4te-configuration-phase-fhac.png)
 
