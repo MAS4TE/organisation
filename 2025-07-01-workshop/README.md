@@ -7,7 +7,7 @@ Attendees: https://terminplaner6.dfn.de/en/p/7f7b2880eab0235ab7ca736e597f5f92-12
     - FHAC (Florian) - ASSUME
     - ULiege (Mevludin) - Communication between LLM and Agent/ to the Market / regarding Scheduling
     - FZJ (Andre) - Communication between Battery and Agents through FIWARE / integration of digital twin
-    - OU (Bea) - Idea of intercommunication of Co-Pilots
+    - OU (Bea) - What is needed for the LLMs? Which data, which models, which prompts, what is needed for strategy (all regarding phase 1)
 - 11:15 discuss use cases as below to reach phase 1
     - [x] 0. step: ASSUME - simulation for storage market running
         - short demo of ASSUME
