@@ -13,7 +13,7 @@ This repository contains concepts and diagrams of the MAS4TE project.
 | [1. July](./2025-07-01-workshop/README.md)  | Concepts & Programming  |
 
 ## Sequence Diagrams
-[The battery market sequence diagram](./storage_market_seq_diagram.md) shows the steps needed to implement the battery market. The steps 'Coordinate schedule / storage usage' will be shown in detail in [schedule sequence diagram](./schedule_seq_diagram.md)
+[The battery market sequence diagram](./seq_diagrams/battery_market_seq_diagram.md) shows the steps needed to implement the battery market. The steps 'Coordinate schedule / storage usage' will be shown in detail in [schedule sequence diagram](./seq_diagrams/battery_schedule_seq.md)
 
 
 ## Product definitions
