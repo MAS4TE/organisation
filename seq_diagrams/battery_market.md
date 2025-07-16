@@ -1,3 +1,5 @@
+Please note, that this is only for the battery market process. For the scheduling and the energy only market process, please see [here](./battery_schedule.md) and [here](./EOM_schedule.md).
+
 ```mermaid
 sequenceDiagram
     participant ProviderAgent as Provider Agent
