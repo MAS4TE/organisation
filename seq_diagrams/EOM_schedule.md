@@ -2,19 +2,29 @@ This diagram is only for the schedule of the energy only market (EOM). For the b
 
 ```mermaid
 sequenceDiagram
-    Participant CA as Consumer Agent
-    Participant CS as Consumer Supplier / <br> Balancing Operator
-    Participant EOMO as local Energy only Market <br> Operator
-    Participant PA as Provider Agent / FZJ
-    Participant PS as Provider Supplier / <br> Balancing Operator
-    Participant FZJ as FZJ FiWare
+    participant ProviderAgent as Provider Agent
+    participant ProviderSupplier as Provider Supplier
+    participant ConsumerAgent as Consumer Agent
+    participant ConsumerSupplier as Consumer Supplier
+    participant PricingFW as Pricing Framework
+    participant Market as Local Energy only Market
+    participant Blockchain
 
-    CA->>EOMO: Send local EOM schedule
-    EOMO->>CS: Send local EOM schedule
-    EOMO->>PA: Send local EOM schedule
-    EOMO->>PS: Send local EOM schedule
+    ConsumerAgent->>PricingFW: Query energy worth for 24 hours (demand side)
+    PricingFW-->>ConsumerAgent: Return energy worth for 24 hours
 
-    PA->>FZJ: Send local EOM schedule
 
-    FZJ->>FZJ: Process via FIWARE
+    ConsumerAgent->>Market: Submit demand bid
+
+    ProviderAgent->>PricingFW: Query energy worth for 24 hours (supply side)
+    PricingFW-->>ProviderAgent: Return energy worth for 24 hours
+
+    ProviderAgent->>Market: Submit supply bid
+
+    Market->>Blockchain: Store bids and clearing result
+    Market-->>ProviderAgent: Return clearing result
+    Market-->>ConsumerAgent: Return clearing result
+
+    Market->>ConsumerSupplier: Send accepted bids
+    Market->>ProviderSupplier: Send accepted bids
 ```
