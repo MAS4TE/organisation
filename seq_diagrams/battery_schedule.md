@@ -1,4 +1,4 @@
-This diagram is only for the schedule of batteries. For the battery market process please [see here](./seq_diagrams/battery_market.md).
+This diagram is only for the schedule of batteries. For the battery market process please [see here](./battery_market.md).
 ```mermaid
 sequenceDiagram
     Participant CA as Consumer Agent
