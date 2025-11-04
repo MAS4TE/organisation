@@ -23,6 +23,8 @@ This repository contains concepts and diagrams of the MAS4TE project.
 
 ![MAS4TE](./media/mas4te-configuration-phase-fhac.png)
 
+## Next steps for software development
+![Architectural](./media/software-stack-next-steps.png)
 
 ## Tools
 
