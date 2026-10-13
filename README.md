@@ -6,6 +6,8 @@ This repository contains concepts and diagrams of the MAS4TE project.
 
 ![MAS4TE project overview](./media/mas4te-overview.png)
 
+> The overview does not show the BRP yet. The schedules are exchanged via the BRP, not directly between the agents, see the [battery market flow](./seq_diagrams/battery_market.md).
+
 ## Schedule
 
 | Workshop | Content |

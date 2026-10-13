@@ -50,6 +50,8 @@ about technical details or market transactions.*
 
     -   Market Framework (ASSUME)
 
+    -   BRP
+
 -   **Goal**:\
     Automatically reserve storage capacity in the community market for a
     week of renovations based on user-provided context.
@@ -71,29 +73,35 @@ about technical details or market transactions.*
 
 4.  The Trading Engine:
 
-    -   Estimates the household's daily storage needs for evening
-        renovations (e.g., 8kWh/day).
+    -   Estimates the storage capacity the household needs for the
+        evening renovations (e.g., 8kWh).
 
     -   Checks market availability and pricing for storage capacity over
         the next week.
 
-    -   Reserves 56kWh of total storage capacity (8kWh/day × 7 days) at
+    -   Bids for 8kWh of storage capacity for the next week at
         €0.07/kWh.
 
-5.  The Market Framework (ASSUME) processes the trade and confirms the
-    reservation.
+5.  The Market Framework (ASSUME) clears the market, confirms the
+    reservation and matches the household with one or more storage
+    providers.
 
 6.  The LLM notifies the prosumer afterwards:\
-    *"I've reserved 8kWh of storage capacity per day for next week at
+    *"I've reserved 8kWh of storage capacity for next week at
     €0.07/kWh to support your renovation plans."*
+
+7.  During the week, the Trading Engine sends the charging and
+    discharging schedule of the reserved storage to the BRP, which
+    passes it on to the matched storage providers.
 
 **Alternative Flows**
 
 -   **Partial Market Availability**:
 
-    -   If only part of the week is covered, the LLM informs the user:\
-        *"I was able to reserve storage for 5 of the 7 days. I'll
-        continue monitoring the market for additional availability."*
+    -   If only part of the needed capacity is available, the LLM
+        informs the user:\
+        *"I was able to reserve 6 of the 8kWh of storage capacity. I'll
+        try again in next week's auction."*
 
 -   **High Price Condition**:
 
@@ -132,6 +140,8 @@ can generate income without managing the details myself.*
 
     -   Market Framework (ASSUME)
 
+    -   BRP
+
 -   **Goal**:\
     Automatically make the household's storage capacity available in the
     community market for others to use during their week-long absence.
@@ -155,21 +165,25 @@ can generate income without managing the details myself.*
 
 4.  The Trading Engine/Agent:
 
-    -   Confirms the household's storage capacity availability (e.g.,
-        12kWh/day).
+    -   Confirms the household's available storage capacity (e.g.,
+        12kWh).
 
     -   Queries current market demand and pricing.
 
-    -   Sells 84kWh total storage capacity (12kWh/day × 7 days) at
+    -   Offers 12kWh of storage capacity for the next week at
         €0.09/kWh.
 
-5.  The Market Framework (ASSUME) processes the trade and matches the
+5.  The Market Framework (ASSUME) clears the market and matches the
     seller with buyers.
 
 6.  The LLM notifies the prosumer afterwards:\
     *"Your storage capacity has been made available on the community
     market for the next 7 days. You'll earn €0.09/kWh for a total of
-    €7.56 over the week."*
+    €1.08 over the week."*
+
+7.  During the week, the Trading Engine fetches the buyers' schedules
+    from the BRP, operates the battery accordingly and reports the
+    actually driven schedule back to the BRP.
 
 **Alternative Flows**
 

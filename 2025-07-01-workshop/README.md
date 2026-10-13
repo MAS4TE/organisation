@@ -1,8 +1,12 @@
 # Agenda
 
+> **Status (October 2026):** step 1 is implemented as weekly battery market in ASSUME with the
+> BRP for the schedules, see the [battery market flow](../seq_diagrams/battery_market.md).
+> Steps 2 and 3 (EOM) are not implemented yet.
+
 Attendees: https://terminplaner6.dfn.de/en/p/7f7b2880eab0235ab7ca736e597f5f92-1275711
 
-- 10:00 top view of the [MAS4TE project phases](../media/mas4te-configuration-phase-fhac.png)
+- 10:00 top view of the MAS4TE project phases (phase model no longer maintained)
 - 10:15 presentation (10 minutes each + 5 minutes discussion)
     - FHAC (Florian) - ASSUME
     - ULiege (Mevludin) - Communication between LLM and Agent/ to the Market / regarding Scheduling
